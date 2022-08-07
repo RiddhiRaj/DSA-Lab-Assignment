@@ -3,12 +3,9 @@
 #include<stdlib.h>
 int main()
 {
-    printf("Enter the number of rows in the array\n");
-    int m;
-    scanf("%d",&m);
-    printf("Enter the number of columns in the array\n");
-    int n;
-    scanf("%d",&n);
+    printf("Enter the number of rows and columns of the array: ");
+    int m,n;
+    scanf("%d %d",&m,&n);
     int **a=(int **)malloc(m*sizeof(int *));//dynamic memory allocation for 2D array
     for(int i=0;i<m;i++)
     {
@@ -32,7 +29,7 @@ int main()
         {
             if(a[i][j]==x)
             {
-                printf("Element found at %d %d\n",i,j);
+                printf("Element found at (%d,%d)\n",i,j);
                 flag=1;
             }
         }
