@@ -13,9 +13,9 @@ int main(){
 
     //enter range
     int start,end;
-    printf("Enter the starting index of the range\n");
+    printf("Enter the starting index\n");
     scanf("%d",&start);
-    printf("Enter the ending index of the range\n");
+    printf("Enter the ending index\n");
     scanf("%d",&end);
     //delete range
     for(int k=start;k<=end;k++)
@@ -24,7 +24,5 @@ int main(){
     printf("The array after deleting the range is: \n");
     for(int k=0;k<n;k++)
         printf("%d ",*(a+k));
-
-
     return 0;
 }
