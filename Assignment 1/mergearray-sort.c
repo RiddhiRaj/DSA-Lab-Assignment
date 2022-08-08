@@ -6,6 +6,7 @@
 		printf("Enter the elements of the first array\n");
 		for(int i=0;i<n;i++)
 			scanf("%d",a+i);
+
 		printf("Enter the number of elements of the second array\n");
 		scanf("%d",&n1);
 		int *b=(int*)malloc(n1*sizeof(int));
