@@ -1,0 +1,1 @@
+//Write a C program to implement stack using dynamic array and perform the following operation • PUSH() • POP() • PEEK() • DISPLAY(). 
