@@ -30,8 +30,7 @@ void main()
         scanf("%d", &ch);
         switch (ch)
         {
-        case 1:
-            enqueue();
+        case 1: enqueue();
             break;
         case 2:
             dequeue();
