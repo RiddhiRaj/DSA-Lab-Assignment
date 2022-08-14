@@ -1,101 +1,120 @@
-//Write a C program to implement queue using stack
+//C Program to Implement Queues using Stacks
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-
-struct node
+ 
+void push1(int);
+void push2(int);
+int pop1();
+int pop2();
+void enqueue();
+void dequeue();
+void display();
+void create();
+ 
+int st1[100], st2[100];
+int top1 = -1, top2 = -1;
+int count = 0;
+ 
+void main()
 {
-    int data;
-    struct node *next;
-};
-
-struct node *top = NULL;
-struct node *bottom = NULL;
-
-void push(int data)
-{
-    struct node *newNode = (struct node *)malloc(sizeof(struct node));
-    newNode->data = data;
-    newNode->next = NULL;
-    if (top == NULL)
+    int ch;
+ 
+    printf("\n1 - Enqueue element into queue");
+    printf("\n2 - Dequeu element from queue");
+    printf("\n3 - Display from queue");
+    printf("\n4 - Exit");
+    create();
+    while (1)
     {
-        top = newNode;
-        bottom = newNode;
-    }
-    else
-    {
-        bottom->next = newNode;
-        bottom = newNode;
+        printf("\nEnter choice");
+        scanf("%d", &ch);
+        switch (ch)
+        {
+        case 1:
+            enqueue();
+            break;
+        case 2:
+            dequeue();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            exit(0);
+        default:
+            printf("Wrong choice");
+        }
     }
 }
-
-void pop()
+ 
+/*Function to create a queue*/
+void create()
 {
-    if (top == NULL)
-    {
-        printf("Stack is empty\n");
-        return;
-    }
-    struct node *temp = top;
-    top = top->next;
-    free(temp);
+    top1 = top2 = -1;
 }
-
+ 
+/*Function to push the element on to the stack*/
+void push1(int data)
+{
+    st1[++top1] = data;
+}
+ 
+/*Function to pop the element from the stack*/
+int pop1()
+{
+    return(st1[top1--]);
+}
+ 
+/*Function to push an element on to stack*/
+void push2(int data)
+{
+    st2[++top2] = data;
+}
+ 
+/*Function to pop an element from th stack*/
+ 
+int pop2()
+{
+    return(st2[top2--]);
+}
+ 
+/*Function to add an element into the queue using stack*/
+void enqueue()
+{
+    int data, i;
+ 
+    printf("Enter data into queue");
+    scanf("%d", &data);
+    push1(data);
+    count++;
+}
+ 
+/*Function to delete an element from the queue using stack*/
+ 
+void dequeue()
+{
+    int i;
+ 
+    for (i = 0;i <= count;i++)
+    {
+        push2(pop1());
+    }
+    pop2();
+    count--;
+    for (i = 0;i <= count;i++)
+    {
+        push1(pop2());
+    }
+}
+ 
+/*Function to display the elements in the stack*/
+ 
 void display()
 {
-    if (top == NULL)
+    int i;
+ 
+    for (i = 0;i <= top1;i++)
     {
-        printf("Stack is empty\n");
-        return;
+        printf(" %d ", st1[i]);
     }
-    struct node *temp = top;
-    while (temp != NULL)
-    {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
 }
-
-void reverse()
-{
-    if (top == NULL)
-    {
-        printf("Stack is empty\n");
-        return;
-    }
-    struct node *temp = top;
-    struct node *prev = NULL;
-    while (temp != NULL)
-    {
-        struct node *next = temp->next;
-        temp->next = prev;
-        prev = temp;
-        temp = next;
-    }
-    top = prev;
-}
-
-int main()
-{
-    //enter the elements in the stack
-    int n;
-    printf("Enter the number of elements in the stack\n");
-    scanf("%d", &n);
-    printf("Enter the elements: \n");
-    for (int i = 0; i < n; i++)
-    {
-        int ele;
-        
-        scanf("%d", &ele);
-        push(ele);
-    }
-    printf("The elements in the stack are\n");
-    display();
-    printf("The elements in the stack in reverse order are\n");
-    reverse();
-    display();
-    return 0;
-}
-
