@@ -19,14 +19,14 @@ void main()
 {
     int ch;
  
-    printf("\n1 - Enqueue element into queue");
-    printf("\n2 - Dequeu element from queue");
-    printf("\n3 - Display from queue");
+    printf("\n1 - Enqueue element into queue: ");
+    printf("\n2 - Dequeue element from queue: ");
+    printf("\n3 - Display from queue: ");
     printf("\n4 - Exit");
     create();
     while (1)
     {
-        printf("\nEnter choice");
+        printf("\nEnter choice: ");
         scanf("%d", &ch);
         switch (ch)
         {
@@ -42,7 +42,7 @@ void main()
         case 4:
             exit(0);
         default:
-            printf("Wrong choice");
+            printf("Wrong choice.");
         }
     }
 }
@@ -77,7 +77,7 @@ int pop2(){
 void enqueue(){
     int data, i;
  
-    printf("Enter data into queue");
+    printf("Enter data into queue: ");
     scanf("%d", &data);
     push1(data);
     count++;
