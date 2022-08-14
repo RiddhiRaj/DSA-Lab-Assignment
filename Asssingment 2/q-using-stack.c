@@ -48,39 +48,33 @@ void main()
 }
  
 /*Function to create a queue*/
-void create()
-{
+void create(){
     top1 = top2 = -1;
 }
  
 /*Function to push the element on to the stack*/
-void push1(int data)
-{
+void push1(int data){
     st1[++top1] = data;
 }
  
 /*Function to pop the element from the stack*/
-int pop1()
-{
+int pop1(){
     return(st1[top1--]);
 }
  
 /*Function to push an element on to stack*/
-void push2(int data)
-{
+void push2(int data){
     st2[++top2] = data;
 }
  
 /*Function to pop an element from th stack*/
  
-int pop2()
-{
+int pop2(){
     return(st2[top2--]);
 }
  
 /*Function to add an element into the queue using stack*/
-void enqueue()
-{
+void enqueue(){
     int data, i;
  
     printf("Enter data into queue");
@@ -91,8 +85,7 @@ void enqueue()
  
 /*Function to delete an element from the queue using stack*/
  
-void dequeue()
-{
+void dequeue(){
     int i;
  
     for (i = 0;i <= count;i++)
@@ -109,8 +102,7 @@ void dequeue()
  
 /*Function to display the elements in the stack*/
  
-void display()
-{
+void display(){
     int i;
  
     for (i = 0;i <= top1;i++)
