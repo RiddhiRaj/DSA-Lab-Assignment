@@ -1,43 +1,70 @@
-# write a python program to implement a circular queue
+# circular queue implementation
 
-class CircularQueue:
-    
-    #Constructor
-    def __init__(self):
-        self.queue = list()
-        self.front = 0
-        self.rear = 0
-        self.maxSize = 8
+# Circular Queue implementation in Python
 
-    #Adding elements to the queue
-    def enqueue(self,data):
-        if self.size() == self.maxSize-1:
-            return ("Queue Full!")
-        self.queue.append(data)
-        self.rear = (self.rear + 1) % self.maxSize
-        return True
 
-    #Removing elements from the queue
+class MyCircularQueue():
+
+    def __init__(self, k):
+        self.k = k # size of the circular queue	
+        self.queue = [0] * k # array to store the elements of the circular queue
+        self.front = self.rear = -1
+
+    # Insert an element into the circular queue
+    def enqueue(self, data):
+
+        if ((self.rear + 1) % self.k == self.front):
+            print("The circular queue is full\n")
+
+        elif (self.front == -1):
+            self.front = 0
+            self.rear = 0
+            self.queue[self.rear] = data
+        else:
+            self.rear = (self.rear + 1) % self.k
+            self.queue[self.rear] = data
+
+    # Delete an element from the circular queue
     def dequeue(self):
-        if self.size()==0:
-            return ("Queue Empty!") 
-        data = self.queue[self.front]
-        self.front = (self.front + 1) % self.maxSize
-        return data
+        if (self.front == -1):
+            print("The circular queue is empty\n")
 
-    #Calculating the size of the queue
-    def size(self):
-        if self.rear>=self.front:
-            return (self.rear-self.front)
-        return (self.maxSize - (self.front-self.rear))
+        elif (self.front == self.rear):
+            temp = self.queue[self.front]
+            self.front = -1
+            self.rear = -1
+            return temp
+        else:
+            temp = self.queue[self.front]
+            self.front = (self.front + 1) % self.k
+            return temp
 
-q = CircularQueue()
-print(q.enqueue(1))
-print(q.enqueue(2))
-print(q.enqueue(3)) 
-print(q.enqueue(4))
-print(q.enqueue(5))
-print(q.dequeue())
-print(q.dequeue())
-print(q.dequeue())
-print(q.dequeue())
+    def printCQueue(self):
+        if(self.front == -1):
+            print("No element in the circular queue")
+
+        elif (self.rear >= self.front):
+            for i in range(self.front, self.rear + 1):
+                print(self.queue[i], end=" ")
+            print()
+        else:
+            for i in range(self.front, self.k):
+                print(self.queue[i], end=" ")
+            for i in range(0, self.rear + 1):
+                print(self.queue[i], end=" ")
+            print()
+
+
+# Your MyCircularQueue object will be instantiated and called as such:
+obj = MyCircularQueue(5)
+obj.enqueue(1)
+obj.enqueue(2)
+obj.enqueue(3)
+obj.enqueue(4)
+obj.enqueue(5)
+print("Initial queue")
+obj.printCQueue()
+
+obj.dequeue()
+print("After removing an element from the queue")
+obj.printCQueue()
