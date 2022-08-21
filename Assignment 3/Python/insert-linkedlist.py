@@ -24,8 +24,8 @@ class LinkedList:
 
     def insertAtFirst(self, data):
         newNode = Node(data)
-        newNode.next = self.head
-        self.head = newNode
+        newNode.next = self.head #here we are pointing the new node to the head of the list
+        self.head = newNode #here we are making the new node as the head of the list
 
     def insertAtLast(self, data):
         newNode = Node(data)
