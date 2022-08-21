@@ -1,7 +1,4 @@
-# Write a program to implement the following functions for single linked list.
-# • createList • insertAtFirst • insertAtLast
-# • insertAtAny
-# • displayList
+# Write a program to implement the following functions for single linked list: • createList • insertAtFirst • insertAtLast • insertAtAny • displayList
 class Node:
     def __init__(self, data):
         self.data = data
@@ -61,9 +58,12 @@ class LinkedList:
 list = LinkedList()
 list.createList()
 list.displayList()
+print("Inserting 0 at the beginning of the list")
 list.insertAtFirst(0)
-list.displayList()  
+list.displayList()
+print("Inserting 10 at the end of the list")  
 list.insertAtLast(10)
 list.displayList()
+print("Inserting 5 at the 3rd position of the list")
 list.insertAtAny(5, 3)
 list.displayList()

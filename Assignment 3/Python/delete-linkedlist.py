@@ -1,9 +1,4 @@
-# Write a program to implement the following functions for single linked list.
-# • createList
-# • deleteFromFirst
-# • deleteFromLast
-# • deleteFromAny
-# • displayList
+# Write a program to implement the following functions for single linked list: • createList • deleteFromFirst • deleteFromLast • deleteFromAny • displayList
 
 class Node:
     def __init__(self, data):
@@ -78,12 +73,15 @@ list = LinkedList()
 list.createList()
 list.displayList()
 print()
+print("Deleting from first")
 list.deleteFromFirst()
 list.displayList()
 print()
+print("Deleting from last")
 list.deleteFromLast()
 list.displayList()
 print()
+print("Deleting from position 2")
 list.deleteFromAny(2)
 list.displayList()
 print()
