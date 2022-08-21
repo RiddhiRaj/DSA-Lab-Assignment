@@ -16,11 +16,11 @@ int main()
     printf("Enter a String: ");
     scanf("%s", str);
     len = strlen(str);
-    for (i = 0; i < len; i++)
+    for (int i = 0; i < len; i++)
     {
         push(str[i]);
     }
-    for (i = 0; i <= len; i++)
+    for (int i = 0; i <= len; i++)
     {
         str[i] = pop();
     }
