@@ -75,28 +75,15 @@ class LinkedList:
                 p = p.next
 
 list = LinkedList()
-
-while True:
-    print("\n1. Create a list")
-    print("2. Delete from first")
-    print("3. Delete from last")
-    print("4. Delete from any")
-    print("5. Display list")
-    print("6. Exit")
-    choice = int(input("Enter your choice: "))
-    if choice == 1:
-        list.createList()
-    elif choice == 2:
-        list.deleteFromFirst()
-    elif choice == 3:
-        list.deleteFromLast()
-    elif choice == 4:
-        x = int(input("Enter the index: "))
-        list.deleteFromAny(x)
-    elif choice == 5:
-        list.displayList()
-    elif choice == 6:
-        break
-    else:
-        print("Invalid choice")
-        break
+list.createList()
+list.displayList()
+print()
+list.deleteFromFirst()
+list.displayList()
+print()
+list.deleteFromLast()
+list.displayList()
+print()
+list.deleteFromAny(2)
+list.displayList()
+print()

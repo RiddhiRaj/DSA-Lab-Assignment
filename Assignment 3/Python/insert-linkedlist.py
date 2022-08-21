@@ -1,10 +1,7 @@
 # Write a program to implement the following functions for single linked list.
-# • createList
-# • insertAtFirst
-# • insertAtLast
+# • createList • insertAtFirst • insertAtLast
 # • insertAtAny
 # • displayList
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -62,34 +59,11 @@ class LinkedList:
             print()
 
 list = LinkedList()
-
-while True:
-    print("1. Create List")
-    print("2. Insert at beginning")
-    print("3. Insert at end")
-    print("4. Insert at any position")
-    print("5. Display list")
-    print("6. Exit")
-
-    option = int(input("Enter your choice: "))
-
-    if option == 1:
-        list.createList()
-    elif option == 2:
-        data = int(input("Enter the element to be inserted: "))
-        list.insertAtFirst(data)
-    elif option == 3:
-        data = int(input("Enter the element to be inserted: "))
-        list.insertAtLast(data)
-    elif option == 4:
-        data = int(input("Enter the element to be inserted: "))
-        x = int(input("Enter the index at which element to be inserted: "))
-        list.insertAtAny(data, x)
-    elif option == 5:
-        list.displayList()
-    elif option == 6:
-        break
-    else:
-        print("Wrong option")
-    print()
-
+list.createList()
+list.displayList()
+list.insertAtFirst(0)
+list.displayList()  
+list.insertAtLast(10)
+list.displayList()
+list.insertAtAny(5, 3)
+list.displayList()
