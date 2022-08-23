@@ -1,5 +1,8 @@
 # Write a program to print the odd number and even number nodes separately from a single linked list.
 
+from traceback import print_tb
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -50,16 +53,25 @@ class LinkedList:
 
 if __name__ == '__main__':
     llist = LinkedList()
-    llist.insert_node(1)
-    llist.insert_node(2)
-    llist.insert_node(3)
-    llist.insert_node(4)
-    llist.insert_node(5)
-    llist.insert_node(6)
-    llist.insert_node(7)
-    llist.insert_node(8)
-    llist.insert_node(9)
-    llist.insert_node(10)
-    llist.print_list()
-    llist.head = llist.odd_even_list()
-    llist.print_list()
+    print("Enter the number of nodes: ")
+    n = int(input())
+    for i in range(n):
+        print("Enter the data: ", end="")
+        data = int(input())
+        llist.insert_node(data)
+    llist.odd_even_list()
+    print("\n")
+    
+    # llist.insert_node(1)
+    # llist.insert_node(2)
+    # llist.insert_node(3)
+    # llist.insert_node(4)
+    # llist.insert_node(5)
+    # llist.insert_node(6)
+    # llist.insert_node(7)
+    # llist.insert_node(8)
+    # llist.insert_node(9)
+    # llist.insert_node(10)
+    # llist.print_list()
+    # llist.head = llist.odd_even_list()
+    # llist.print_list()
