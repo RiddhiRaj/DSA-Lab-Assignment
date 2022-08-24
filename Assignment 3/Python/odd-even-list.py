@@ -1,8 +1,5 @@
 # Write a program to print the odd number and even number nodes separately from a single linked list.
 
-from traceback import print_tb
-
-
 class Node:
     def __init__(self, data):
         self.data = data
