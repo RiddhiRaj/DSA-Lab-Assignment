@@ -17,15 +17,12 @@ int main()
         printf("File not found");
         exit(0);
     }
-    
     while((ch=fgetc(fp))!=EOF)
     {
         str[i]=ch;
         i++;
     }
-
     str[i]='\0';
-
     if(strstr(str,"<html>"))
     {
         if(strstr(str,"</html>"))
